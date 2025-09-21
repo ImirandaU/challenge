@@ -42,8 +42,25 @@ function actualizarListaVisual() {
     }
 }
 
-// Función placeholder para el sorteo (para futuros desafíos)
+// Función para sortear un amigo de manera aleatoria
 function sortearAmigo() {
-    // Esta función se implementará en los siguientes desafíos
-    console.log('Función sortearAmigo() será implementada próximamente');
+    // 1. Validar que haya amigos disponibles
+    if (amigos.length === 0) {
+        alert('No hay amigos disponibles para sortear. Por favor, agrega algunos nombres primero.');
+        return; // Salir de la función si no hay amigos
+    }
+    
+    // 2. Generar un índice aleatorio
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    
+    // 3. Obtener el nombre sorteado
+    const amigoSorteado = amigos[indiceAleatorio];
+    
+    // 4. Mostrar el resultado
+    const elementoResultado = document.getElementById('resultado');
+    elementoResultado.innerHTML = `El amigo secreto sorteado es: ${amigoSorteado}`;
+    
+    // Opcional: Mostrar en consola para verificar
+    console.log('Amigo sorteado:', amigoSorteado);
+    console.log('Índice utilizado:', indiceAleatorio);
 }
