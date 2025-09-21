@@ -1,5 +1,4 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = []
 
 function agregarAmigo() {
@@ -26,17 +25,21 @@ function agregarAmigo() {
     actualizarListaVisual();
 }
 
-// Función adicional para mostrar la lista de amigos en el HTML
+// Función para mostrar la lista de amigos en el HTML
 function actualizarListaVisual() {
-    const listaAmigos = document.getElementById('listaAmigos');
-    listaAmigos.innerHTML = ''; // Limpiar la lista actual
+    // 1. Obtener el elemento de la lista
+    const lista = document.getElementById('listaAmigos');
     
-    // Agregar cada amigo como un elemento de lista
-    amigos.forEach(function(amigo) {
-        const li = document.createElement('li');
-        li.textContent = amigo;
-        listaAmigos.appendChild(li);
-    });
+    // 2. Limpiar la lista existente
+    lista.innerHTML = "";
+    
+    // 3. Iterar sobre el arreglo usando un bucle for
+    for (let i = 0; i < amigos.length; i++) {
+        // 4. Agregar elementos a la lista: crear un nuevo elemento de lista
+        const elementoLista = document.createElement('li');
+        elementoLista.textContent = amigos[i];
+        lista.appendChild(elementoLista);
+    }
 }
 
 // Función placeholder para el sorteo (para futuros desafíos)
